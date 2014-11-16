@@ -1,0 +1,6 @@
+/home/chris/Documents/Overflows/date11152014/mathgl-2.3.1/utils/CMakeFiles/make_pas.dir
+/home/chris/Documents/Overflows/date11152014/mathgl-2.3.1/src/CMakeFiles/mgl.dir
+/home/chris/Documents/Overflows/date11152014/mathgl-2.3.1/src/CMakeFiles/mgl-static.dir
+/home/chris/Documents/Overflows/date11152014/mathgl-2.3.1/utils/CMakeFiles/mgl.cgi.dir
+/home/chris/Documents/Overflows/date11152014/mathgl-2.3.1/examples/CMakeFiles/mgl_example.dir
+/home/chris/Documents/Overflows/date11152014/mathgl-2.3.1/utils/CMakeFiles/mglconv.dir

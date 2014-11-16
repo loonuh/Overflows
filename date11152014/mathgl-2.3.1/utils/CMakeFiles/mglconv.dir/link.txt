@@ -1,0 +1,1 @@
+/usr/bin/c++   none -fopenmp -O3 -DNDEBUG    CMakeFiles/mglconv.dir/mglconv.cpp.o  -o mglconv -rdynamic ../src/libmgl.so.7.4.0 -lGLU -lGL -lSM -lICE -lX11 -lXext -lpng -lz -lm -Wl,-rpath,/home/chris/Documents/Overflows/date11152014/mathgl-2.3.1/src: 

@@ -1,0 +1,88 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+#include </home/chris/Documents/Overflows/date11152014/mathgl-2.3.1/include/mgl2/mgl.h>
+
+using std::vector;
+using namespace std;
+
+vector<double> linspace(double min, double max, int n)
+{
+  vector<double> result;
+  int iterator = 0;
+  
+  for (int i = 0; i <= n-2; i++)
+    {
+      double temp = min + i*(max-min)/(floor((double)n) - 1);
+      result.insert(result.begin() + iterator, temp);
+      iterator += 1;
+    }
+  
+  result.insert(result.begin() + iterator, max);
+  return result;
+}
+
+int main()
+{
+  //vector<double> r;
+  //vector<double> rho;
+  //vector<double> R1s;
+  //vector<double> Y1s;
+
+  //int N = 21;
+  //int n = 1; //principal quantum number
+  //int Z = 1;
+
+  //r = linspace(0,1,N);
+
+  //for (int x=0;x<N;++x){
+  //  rho.push_back(2*Z*r[x]/n);
+  //  R1s.push_back(2*pow(Z,1.5)*exp(-rho[x]/2));
+  //  Y1s.push_back(pow(1*(1.0/4.0/M_PI),1));
+  //  std::cout << R1s[x]*Y1s[x];
+  //  std::cout << std::endl;
+  //}
+  mglGraph *gr;
+        mglData f(4,6);
+        mglData x(8);
+        mglData y(8);
+        mglData z(8);
+
+        f.a[0]=0;        f.a[1]=2;        f.a[2]=6;        f.a[3]=4;
+        f.a[4]=1;        f.a[5]=3;        f.a[6]=7;        f.a[7]=5;
+        f.a[8]=0;        f.a[9]=4;        f.a[10]=5;        f.a[11]=1;
+        f.a[12]=2;        f.a[13]=6;        f.a[14]=7;        f.a[15]=3;
+        f.a[16]=0;        f.a[17]=1;        f.a[18]=3;        f.a[19]=2;
+        f.a[20]=4;        f.a[21]=5;        f.a[22]=7;        f.a[23]=5;
+
+        x.a[0]= 0;        y.a[0]= 0;        z.a[0]= 0;
+        x.a[1]= 1;        y.a[1]= 0;        z.a[1]= 0;
+        x.a[2]= 0;        y.a[2]= 1;        z.a[2]= 0;
+        x.a[3]= 1;        y.a[3]= 1;        z.a[3]= 0;
+        x.a[4]= 0;        y.a[4]= 0;        z.a[4]= 1;
+        x.a[5]= 1;        y.a[5]= 0;        z.a[5]= 1;
+        x.a[6]= 0;        y.a[6]= 1;        z.a[6]= 1;
+        x.a[7]= 1;        y.a[7]= 1;        z.a[7]= 1;
+
+        gr->Rotate(60,40);        gr->Box();
+        gr->QuadPlot(f,x,y,z,"bgr");
+
+    return 0;  
+  mglData dat(30,40); //data to for plotting
+
+  for(long i=0;i<30;i++){ for(long j=0;j<40;j++){
+      dat.a[i+30*j] = 1/(1+(i-15)*(i-15)/225.+(j-20)*(j-20)/400.);
+    }
+
+
+    mglGraph gr;       // class for plot drawing
+    gr.Rotate(50,60);  // rotate axis
+    gr.Light(true);    // enable lighting
+    gr.Surf(dat);      // plot surface
+    gr.Cont(dat,"y");  // plot yellow contour lines
+    gr.Axis();         // draw axis
+    gr.WriteFrame("sample.png");  //save it
+  }
+}
+
+
