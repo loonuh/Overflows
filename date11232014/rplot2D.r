@@ -7,6 +7,10 @@
 #you will need to create an alias=Rscript <path to this script>/plotDens.r
 #you can then use that alias like this:
 #alias <only name of .mat file excluding .mat part> <name you want for pdf file excluding .pdf> <args>
+#For example, if I named my alias rplot2D, and I was in a directory with the file mu.mat.
+#I could execute the following at the commmand line:
+#rplot2D mu muplot 'Degree (k)' 'Rewiring coefficient (w)' 'Degree Density u(k,w)';evince muplot.pdf
+
 #You will need these libraries
 library(R.matlab);
 library(ggplot2);
